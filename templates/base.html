@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="My name is Bronek Szulc and I'm a web developer living outside of Toronto.">
+		<meta name="keywords" content="Web Developer, Toronto, Humber">
+		<meta name="author" content="Bronek Szulc">
+		<meta charset="utf-8">
+        <title>Reddit Images</title>
+        
+        <link rel="shortcut icon" href="{{url_for('static', filename='favicon.ico')}}" />
+        <link rel="stylesheet" type="text/css" href="/static/style.css" />
+    </head>
+    <body>
+    	<div id="wrapper">
+    		<ul>
+    			<li>
+    				<h1>Reddit's Front Page (images)!</h1>
+    				<h3>{{date}}</h3>
+    				<h3>{{time}}</h3>
+    			</li>
+    		{% set counter = 1 %}
+    		{% for image in images %}
+    			<li>
+    				<h2>Image {{counter + loop.index0}}</h2>
+    				<img src="{{image}}" style="max-height: 610px; text-align: center;">
+    			</li>
+	    	{% endfor %}
+    		</ul>
+    	</div>
+    </body>
+</html>
