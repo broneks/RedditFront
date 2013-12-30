@@ -2,9 +2,9 @@
 
 <html>
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="author" content="Bronek Szulc">
-        <meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="Bronek Szulc">
+		<meta charset="utf-8">
         <title>Reddit Images</title>
         
         <link rel="shortcut icon" href="{{url_for('static', filename='favicon.ico')}}" />
@@ -17,13 +17,13 @@
     				<h1>Reddit's Front Page (images)!</h1>
     				<h3>{{date}}</h3>
     				<h3>{{time}}</h3>
-    				<a href="http://www.reddit.com">"<img src="/static/alien.png"></a>
+    				<a href="http://www.reddit.com"><img src="/static/alien.png"></a>
     			</li>
     		{% set counter = 1 %}
     		{% for image in images %}
     			<li>
-    				<h2>Image {{counter + loop.index0}}</h2>
-    				<img src="{{image}}" style="max-height: 610px; text-align: center;">
+    				<h2><a href="{{image[1]}}">Image {{counter + loop.index0}}</a></h2>
+    				<img src="{{image[0]}}" style="max-height: 610px; text-align: center;">
     			</li>
 	    	{% endfor %}
     		</ul>
