@@ -1,1 +1,4 @@
-- doesn't really get all the images (yet)
+TO-DO
+=====
+
+- account for urls to imgur galleries
