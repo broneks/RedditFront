@@ -23,7 +23,7 @@
     		{% for image in images %}
     			<li>
     				<h2><a href="{{image[1]}}">Image {{counter + loop.index0}}</a></h2>
-    				<img src="{{image[0]}}" style="max-height: 610px; text-align: center;">
+                    <img src="{{image[0]}}">
     			</li>
 	    	{% endfor %}
     		</ul>

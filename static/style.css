@@ -43,3 +43,9 @@ a {
 a:hover { text-decoration: underline; }
 a:hover, a:visited { color: #cee3f8; }
 
+img { 
+    max-height: 610px;
+    max-width: 1300px;
+    text-align: center; 
+}
+
