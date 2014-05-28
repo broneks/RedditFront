@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-
 <html>
     <head>
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Bronek Szulc">
-	<meta charset="utf-8">
-        <title>Reddit Images</title>
+        <title>Reddit Images by Bronek Szulc</title>
         
         <link rel="shortcut icon" href="{{url_for('static', filename='favicon.ico')}}" />
         <link rel="stylesheet" type="text/css" href="/static/style.css" />
@@ -14,26 +13,32 @@
     	<div id="wrapper">
     		<ul>
     			<li>
-    				<h1>Reddit's Front Page (images)!</h1>
+    				<h1>Reddit's Front Page (in images)!</h1>
+                    <h3>Developed by <em>Bronek Szulc</em></h3>
     				<h3>{{date}}</h3>
     				<h3>{{time}}</h3>
-    				<a href="http://www.reddit.com"><img src="/static/alien.png"></a>
+    				<a href="http://www.reddit.com" target="_blank"><img src="/static/alien.png"></a>
     			</li>
     		{% set counter = 1 %}
     		{% for image in images %}
     			<li>
-    				<h2><a href="{{image[1]}}">Image {{counter + loop.index0}}</a></h2>
-                    <img src="{{image[0]}}">
+    				<h2><a href="{{image[1]}}" target="_blank">Image {{counter + loop.index0}}</a></h2>
+                    <img src="/static/blank.png" data-src="{{image[0]}}">
     			</li>
 	    	{% endfor %}
             {% for list in galleries %}
                 <li>
+                    <h2>Image Gallery</h2>
                 {% for image in list %}
-                    <img src="{{image}}">
+                    <img src="/static/blank.png" data-src="{{image}}">
                 {% endfor %}
                 </li>
             {% endfor %}
     		</ul>
     	</div>
+
+        <script src="/static/jquery.min.js"></script>
+        <script src="/static/unveil.js"></script>
+        <script>$(document).ready(function(){$('img').unveil();});</script>
     </body>
 </html>

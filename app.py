@@ -10,7 +10,7 @@ app = Flask(__name__)
 def main():
     ROOT_URL = 'http://www.reddit.com/'
     
-    page = urllib.urlopen('http://www.reddit.com/.json?limit=60')
+    page = urllib.urlopen('http://www.reddit.com/.json?limit=80')
     j = json.loads(page.read())
 
     images = []
