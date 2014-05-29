@@ -40,10 +40,9 @@ def main():
 def get_imgur_imgs(url):
     img_links = []
 
-    try:
-        htmltext = urllib.urlopen(url).read()
-    except:
-        return None
+    try: htmltext = urllib.urlopen(url).read()
+    except: return None
+    
     soup = BeautifulSoup(htmltext)
 
     # not all Imgur galleries have div id=image-container
@@ -52,12 +51,12 @@ def get_imgur_imgs(url):
 
     if start_div:
         for tag in start_div.findAll('img'):
-            img_links.append(tag['data-src'])
+            try: img_links.append(tag['data-src'])
+            except: pass
     else:
         return None
 
     return img_links
-
 
 app.debug = True
 app.run()
